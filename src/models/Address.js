@@ -30,7 +30,7 @@ const AddressSchema = new Schema({
         type: String,
         required: true
     },
-    createdAt: {
+    created_at: {
         type: Date,
         default: Date.now
     }

@@ -3,9 +3,12 @@ const mongoosePaginate = require('mongoose-paginate')
 const Schema = mongoose.Schema
 
 const EstablishmentSchema = new Schema({
-    title: {
+    short_desc: {
         type: String,
         required: true
+    },
+    long_desc: {
+        type: String
     },
     address: {
         type: Schema.Types.ObjectId,
@@ -17,7 +20,7 @@ const EstablishmentSchema = new Schema({
         ref: 'Status',
         required: true
     },
-    createdAt: {
+    created_at: {
         type: Date,
         default: Date.now
     }

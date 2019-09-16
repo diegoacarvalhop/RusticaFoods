@@ -3,19 +3,18 @@ const mongoosePaginate = require('mongoose-paginate')
 const Schema = mongoose.Schema
 
 const StatusSchema = new Schema({
-    title: {
+    short_desc: {
         type: String,
         required: true
     },
-    description: {
-        type: String,
-        required: true
+    long_desc: {
+        type: String
     },
     nemotecnico: {
         type: String,
         required: true
     },
-    createdAt: {
+    created_at: {
         type: Date,
         default: Date.now
     }

@@ -3,9 +3,12 @@ const mongoosePaginate = require('mongoose-paginate')
 const Schema = mongoose.Schema
 
 const ProductSchema = new Schema({
-    title: {
+    short_desc: {
         type: String,
         required: true
+    },
+    long_desc: {
+        type: String
     },
     type: {
         type: Schema.Types.ObjectId,
@@ -21,7 +24,7 @@ const ProductSchema = new Schema({
         type: String,
         required: true
     },
-    createdAt: {
+    created_at: {
         type: Date,
         default: Date.now
     }

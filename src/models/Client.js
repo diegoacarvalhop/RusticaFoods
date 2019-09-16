@@ -33,7 +33,7 @@ const ClientSchema = new Schema({
         ref: 'Status',
         required: true
     },
-    createdAt: {
+    created_at: {
         type: Date,
         default: Date.now
     }

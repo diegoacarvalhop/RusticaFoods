@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const Client = mongoose.model('Client')
 const appRes = require('../config/applicationResources')
 
+// Teste
 module.exports = {
     async index(req, res) {
         const {

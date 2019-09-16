@@ -37,18 +37,19 @@ module.exports = {
 
     async store(req, res) {
         var address = {
-            public_place: req.body.publicPlace,
+            public_place: req.body.public_place,
             number: req.body.number,
             complement: req.body.complement,
             neighborhood: req.body.neighborhood,
             city: req.body.city,
             state: req.body.state,
-            zip_code: req.body.zipCode
+            zip_code: req.body.zip_code
         }
         const addressNew = await Address.create(address)
         if (addressNew) {
             var establishment = {
-                title: req.body.title,
+                short_desc: req.body.short_desc,
+                long_desc: req.body.long_desc,
                 address: addressNew._id,
                 status: req.body.status
             }
@@ -62,18 +63,19 @@ module.exports = {
     async update(req, res) {
         const establishmentBase = await Establishment.findById(req.params.id)
         const addressBase = await Address.findById(establishmentBase.address)
-        addressBase.public_place = req.body.publicPlace
+        addressBase.public_place = req.body.public_place
         addressBase.number = req.body.number
         addressBase.complement = req.body.complement
         addressBase.neighborhood = req.body.neighborhood
         addressBase.city = req.body.city
         addressBase.state = req.body.state
-        addressBase.zip_code = req.body.zipCode
+        addressBase.zip_code = req.body.zip_code
         const addressNew = await Address.findByIdAndUpdate(addressBase._id, addressBase, {
             new: true
         })
         if (addressNew) {
-            establishmentBase.title = req.body.title
+            establishmentBase.short_desc = req.body.short_desc
+            establishmentBase.long_desc = req.body.long_desc
             establishmentBase.address = addressNew._id
             establishmentBase.status = req.body.status
             const establishmentNew = await Establishment.findByIdAndUpdate(establishmentBase._id, establishmentBase, {

@@ -25,7 +25,7 @@ const ClientSchema = new Schema({
         required: true
     },
     payday: {
-        type: Date,
+        type: Number,
         required: true
     },
     status: {

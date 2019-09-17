@@ -6,6 +6,7 @@ const StatusController = require('./controllers/StatusController')
 const TypeController = require('./controllers/TypeController')
 const EstablishmentController = require('./controllers/EstablishmentController')
 const PaymentController = require('./controllers/PaymentController')
+const ClientController = require('./controllers/ClientController')
 
 // Rotas Produtos
 routes.get('/products/findAll', ProductController.index)
@@ -13,6 +14,13 @@ routes.get('/products/findById/:id', ProductController.show)
 routes.post('/products/store', ProductController.store)
 routes.put('/products/updateById/:id', ProductController.update)
 routes.delete('/products/removeById/:id', ProductController.destroy)
+
+// Rotas Clientes
+routes.get('/clients/findAll', ClientController.index)
+routes.get('/clients/findById/:id', ClientController.show)
+routes.post('/clients/store', ClientController.store)
+routes.put('/clients/updateById/:id', ClientController.update)
+routes.delete('/clients/removeById/:id', ClientController.destroy)
 
 // Rotas Pagamentos
 routes.get('/payments/findAll', PaymentController.index)

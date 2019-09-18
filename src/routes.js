@@ -7,6 +7,7 @@ const TypeController = require('./controllers/TypeController')
 const EstablishmentController = require('./controllers/EstablishmentController')
 const PaymentController = require('./controllers/PaymentController')
 const ClientController = require('./controllers/ClientController')
+const OrderController = require('./controllers/OrderController')
 
 // Rotas Produtos
 routes.get('/products/findAll', ProductController.index)
@@ -49,5 +50,12 @@ routes.get('/establishments/findById/:id', EstablishmentController.show)
 routes.post('/establishments/store', EstablishmentController.store)
 routes.put('/establishments/updateById/:id', EstablishmentController.update)
 routes.delete('/establishments/removeById/:id', EstablishmentController.destroy)
+
+// Rotas Order
+routes.get('/orders/findAll', OrderController.index)
+routes.get('/orders/findById/:id', OrderController.show)
+routes.post('/orders/store', OrderController.store)
+routes.put('/orders/updateById/:id', OrderController.update)
+routes.delete('/orders/removeById/:id', OrderController.destroy)
 
 module.exports = routes;

@@ -27,7 +27,7 @@ module.exports = {
             populate: ['payment', 'status', 'establishment']
         }, (err, client) => {
             if (err) {
-                return res.send('Ocorreu um erro na consulta dos clientes: ' + err);
+                return res.send('Ocorreu um erro na consulta do cliente: ' + err);
             } else {
                 return res.json(client)
             }

@@ -1,3 +1,4 @@
+const listEndpoints = require('express-list-endpoints')
 const express = require('express')
 const mongoose = require('mongoose')
 const requireDir = require('require-dir')
@@ -22,7 +23,11 @@ requireDir('./src/models')
 // Primeira rota
 app.use('/api', require('./src/routes'))
 
-const PORT = process.env.PORT || 1985
+app.get('/', function(req, res){
+    res.send(listEndpoints(app))
+})
+
+const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
-    console.log('Servidor Rodando!')
+    console.log('Servidor Rodando em http://localhost:' + PORT)
 })

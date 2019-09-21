@@ -12,9 +12,9 @@ const OrderSchema = new Schema({
         type: Number,
         required: true
     },
-    product: [{
+    item_order: [{
         type: Schema.Types.ObjectId,
-        ref: 'Product',
+        ref: 'ItemOrder',
         required: true
     }],
     amount: {
